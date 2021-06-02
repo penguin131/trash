@@ -1,0 +1,23 @@
+###
+GET http://localhost:8080/getAccountForNumber/1231231231231
+
+###
+POST http://localhost:8080/createAccount
+Content-Type: application/json
+
+{ "number":  "1231231231223", "balance": 12.32}
+
+###
+GET http://localhost:8080/getAccountForNumber/1231231231223
+
+###
+GET http://localhost:8080/createNewCard/1231231231223
+
+###
+GET http://localhost:8080/getAllCards/1231231231223
+
+###
+GET http://localhost:8080/addMoney/1231231231223&20.01
+
+###H2
+http://localhost:8080/h2-console

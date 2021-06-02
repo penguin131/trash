@@ -1,10 +1,10 @@
 package com.example.bank_api.model;
 
-import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Card extends Entity {
     private String number;
-    private BigDecimal balance;
+    @JsonIgnore
     private BankAccount bankAccount;
 
     public String getNumber() {
@@ -13,14 +13,6 @@ public class Card extends Entity {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
     }
 
     public BankAccount getBankAccount() {

@@ -6,7 +6,8 @@ drop table if exists BANK_ACCOUNT;
 create table BANK_ACCOUNT
 (
     ACCOUNT_ID INT auto_increment,
-    NUMBER     VARCHAR(20) not null
+    NUMBER     VARCHAR(20) not null,
+    BALANCE      NUMERIC(14, 2) default 0
 );
 
 create unique index BANK_ACCOUNT_ACCOUNT_ID_UINDEX
@@ -21,7 +22,6 @@ create table CARD
 (
     CARD_ID      INT auto_increment,
     NUMBER       VARCHAR(20) not null,
-    BALANCE      NUMERIC(14, 2) default 0,
     BANK_ACCOUNT INT,
     constraint CARD_BANK_ACCOUNT_ACCOUNT_ID_FK
         foreign key (BANK_ACCOUNT) references BANK_ACCOUNT (ACCOUNT_ID)
